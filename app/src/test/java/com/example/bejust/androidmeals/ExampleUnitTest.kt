@@ -1,4 +1,4 @@
-package com.example.bejust.meals_android
+package com.example.bejust.androidmeals
 
 import org.junit.Test
 
