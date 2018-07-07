@@ -49,7 +49,7 @@
         android:background="#ffffff"
         app:srcCompat="@mipmap/search_button" />
 
-    <android.support.v7.app.AlertController.RecycleListView
+    <android.support.v7.widget.RecyclerView
         android:id="@+id/resultList"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
@@ -57,5 +57,5 @@
         android:layout_below="@+id/search_field"
         android:layout_marginTop="33dp">
 
-    </android.support.v7.app.AlertController.RecycleListView>
+    </android.support.v7.widget.RecyclerView>
 </RelativeLayout>

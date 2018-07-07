@@ -28,13 +28,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
         MealsDatabase = FirebaseDatabase.getInstance().getReference("meals");
         mSearchField = (EditText)findViewById(R.id.search_field);
         mSearchButton = (ImageButton)findViewById(R.id.search_btn);
-
         mResultList = (RecyclerView)findViewById(R.id.resultList);
         mResultList.setHasFixedSize(true);
         mResultList.setLayoutManager(new LinearLayoutManager(this));
+
         mSearchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         Query firebaseSearchQuery = MealsDatabase.orderByChild("strMeal").startAt(searchText).endAt(searchText + "\uf8ff");
 
         FirebaseRecyclerAdapter<Meal,MealsViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Meal, MealsViewHolder>(Meal.class,
-                R.layout.list_layout,MealsViewHolder.class,MealsDatabase) {
+                R.layout.list_layout,MealsViewHolder.class,firebaseSearchQuery) {
 
             @Override
             protected void populateViewHolder(MealsViewHolder viewHolder, Meal model, int position) {
@@ -71,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
             mView = itemView;
         }
 
-        public void setDetails(Context ctx, String mealName, String mealCategory, String mealArea, String mealTags, String mealYoutube, String mealImage, String mealInstructions, String mealIngredients) {
+        public void setDetails(Context ctx, String mealName, String mealCategory, String mealArea, String mealTags, String mealYoutube, String mealImage, String mealInstructions, String mealIngredient1) {
             TextView meal_name = (TextView)mView.findViewById(R.id.mealName);
             TextView meal_category = (TextView)mView.findViewById(R.id.mealCategory);
             TextView meal_area = (TextView)mView.findViewById(R.id.mealArea);
@@ -87,8 +89,7 @@ public class MainActivity extends AppCompatActivity {
             meal_tags.setText(mealTags);
             meal_youtube.setText(mealYoutube);
             meal_instructions.setText(mealInstructions);
-            meal_ingredients.setText(mealIngredients);
-            ///////////////////////////////////
+            meal_ingredients.setText(mealIngredient1);
             Glide.with(ctx).load(mealImage).into(meal_image);
         }
 
