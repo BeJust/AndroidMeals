@@ -1,15 +1,13 @@
 package com.example.bejust.androidmeals;
 
 
-import java.util.Map;
-
 public class Meal {
     public String mealName, mealImage, mealInstructions, mealArea, mealCategory, mealTags, mealYoutube;
-    public Map<String,String> ingredients;
+    public String ingredients;
 
     public Meal(){}
 
-    public Meal(String mealName, String mealImage, String mealInstructions, String mealArea, String mealCategory, String mealTags, String mealYoutube, Map<String, String> ingredients) {
+    public Meal(String mealName, String mealImage, String mealInstructions, String mealArea, String mealCategory, String mealTags, String mealYoutube, String ingredients) {
         this.mealName = mealName;
         this.mealImage = mealImage;
         this.mealInstructions = mealInstructions;
@@ -76,11 +74,11 @@ public class Meal {
         this.mealYoutube = mealYoutube;
     }
 
-    public Map<String, String> getIngredients() {
+    public String getIngredients() {
         return ingredients;
     }
 
-    public void setIngredients(Map<String, String> ingredients) {
+    public void setIngredients(String ingredients) {
         this.ingredients = ingredients;
     }
 }
