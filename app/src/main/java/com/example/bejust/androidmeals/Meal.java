@@ -2,83 +2,83 @@ package com.example.bejust.androidmeals;
 
 
 public class Meal {
-    public String mealName, mealImage, mealInstructions, mealArea, mealCategory, mealTags, mealYoutube;
-    public String ingredients;
+    public String strMeal, strMealThumb, strInstructions, strArea, strCategory, strTags, strYoutube;
+    public String strIngredient1;
 
     public Meal(){}
 
-    public Meal(String mealName, String mealImage, String mealInstructions, String mealArea, String mealCategory, String mealTags, String mealYoutube, String ingredients) {
-        this.mealName = mealName;
-        this.mealImage = mealImage;
-        this.mealInstructions = mealInstructions;
-        this.mealArea = mealArea;
-        this.mealCategory = mealCategory;
-        this.mealTags = mealTags;
-        this.mealYoutube = mealYoutube;
-        this.ingredients = ingredients;
+    public Meal(String strMeal, String strMealThumb, String strInstructions, String strArea, String strCategory, String strTags, String strYoutube, String strIngredient1) {
+        this.strMeal = strMeal;
+        this.strMealThumb = strMealThumb;
+        this.strInstructions = strInstructions;
+        this.strArea = strArea;
+        this.strCategory = strCategory;
+        this.strTags = strTags;
+        this.strYoutube = strYoutube;
+        this.strIngredient1 = strIngredient1;
     }
 
-    public String getMealName() {
-        return mealName;
+    public String getstrMeal() {
+        return strMeal;
     }
 
-    public void setMealName(String mealName) {
-        this.mealName = mealName;
+    public void setstrMeal(String strMeal) {
+        this.strMeal = strMeal;
     }
 
-    public String getMealImage() {
-        return mealImage;
+    public String getstrMealThumb() {
+        return strMealThumb;
     }
 
-    public void setMealImage(String mealImage) {
-        this.mealImage = mealImage;
+    public void setstrMealThumb(String strMealThumb) {
+        this.strMealThumb = strMealThumb;
     }
 
-    public String getMealInstructions() {
-        return mealInstructions;
+    public String getstrInstructions() {
+        return strInstructions;
     }
 
-    public void setMealInstructions(String mealInstructions) {
-        this.mealInstructions = mealInstructions;
+    public void setstrInstructions(String strInstructions) {
+        this.strInstructions = strInstructions;
     }
 
-    public String getMealArea() {
-        return mealArea;
+    public String getstrArea() {
+        return strArea;
     }
 
-    public void setMealArea(String mealArea) {
-        this.mealArea = mealArea;
+    public void setstrArea(String strArea) {
+        this.strArea = strArea;
     }
 
-    public String getMealCategory() {
-        return mealCategory;
+    public String getstrCategory() {
+        return strCategory;
     }
 
-    public void setMealCategory(String mealCategory) {
-        this.mealCategory = mealCategory;
+    public void setstrCategory(String strCategory) {
+        this.strCategory = strCategory;
     }
 
-    public String getMealTags() {
-        return mealTags;
+    public String getstrTags() {
+        return strTags;
     }
 
-    public void setMealTags(String mealTags) {
-        this.mealTags = mealTags;
+    public void setstrTags(String strTags) {
+        this.strTags = strTags;
     }
 
-    public String getMealYoutube() {
-        return mealYoutube;
+    public String getstrYoutube() {
+        return strYoutube;
     }
 
-    public void setMealYoutube(String mealYoutube) {
-        this.mealYoutube = mealYoutube;
+    public void setstrYoutube(String strYoutube) {
+        this.strYoutube = strYoutube;
     }
 
-    public String getIngredients() {
-        return ingredients;
+    public String getstrIngredient1() {
+        return strIngredient1;
     }
 
-    public void setIngredients(String ingredients) {
-        this.ingredients = ingredients;
+    public void setstrIngredient1(String strIngredient1) {
+        this.strIngredient1 = strIngredient1;
     }
 }

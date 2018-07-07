@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             protected void populateViewHolder(MealsViewHolder viewHolder, Meal model, int position) {
-                viewHolder.setDetails(getApplicationContext(),model.getMealName(), model.getMealCategory(), model.getMealArea(), model.getMealTags(),model.getMealYoutube(), model.getMealImage(),model.getMealInstructions(),model.getIngredients());
+                viewHolder.setDetails(getApplicationContext(),model.getstrMeal(), model.getstrCategory(), model.getstrArea(), model.getstrTags(),model.getstrYoutube(), model.getstrMealThumb(),model.getstrInstructions(),model.getstrIngredient1());
 
             }
         };
