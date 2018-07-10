@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton mSearchButton;
     private RecyclerView mResultList;
     private DatabaseReference MealsDatabase;
+    FirebaseRecyclerAdapter<Meal,MealsViewHolder> firebaseRecyclerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,16 @@ public class MainActivity extends AppCompatActivity {
         mResultList.setHasFixedSize(true);
         mResultList.setLayoutManager(new LinearLayoutManager(this));
 
+         firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Meal, MealsViewHolder>(Meal.class,
+                R.layout.list_layout,MealsViewHolder.class,MealsDatabase) {
+
+            @Override
+            protected void populateViewHolder(MealsViewHolder viewHolder, Meal model, int position) {
+                viewHolder.setDetails(getApplicationContext(),model.getstrMeal(), model.getstrCategory(), model.getstrArea(), model.getstrTags(),model.getstrYoutube(), model.getstrMealThumb(),model.getstrInstructions(),model.getstrIngredient1());
+
+            }
+        };
+        mResultList.setAdapter(firebaseRecyclerAdapter);
         mSearchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,8 +64,7 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(MainActivity.this,"Started Search", Toast.LENGTH_LONG).show();
 
         Query firebaseSearchQuery = MealsDatabase.orderByChild("strMeal").startAt(searchText).endAt(searchText + "\uf8ff");
-
-        FirebaseRecyclerAdapter<Meal,MealsViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Meal, MealsViewHolder>(Meal.class,
+        firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Meal, MealsViewHolder>(Meal.class,
                 R.layout.list_layout,MealsViewHolder.class,firebaseSearchQuery) {
 
             @Override
@@ -64,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         mResultList.setAdapter(firebaseRecyclerAdapter);
+
     }
 
     public static class MealsViewHolder extends RecyclerView.ViewHolder{
